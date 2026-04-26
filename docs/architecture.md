@@ -66,16 +66,6 @@ flowchart TB
   CLOUDFLARED -->|정적 8개| NGINX
 
   ADMIN -.SSH via Tailscale.-> TS
-
-  classDef edge fill:#fef3c7,stroke:#f59e0b,color:#000;
-  classDef host fill:#e0e7ff,stroke:#6366f1,color:#000;
-  classDef container fill:#fafaf7,stroke:#737373,color:#000;
-  classDef external fill:#fee2e2,stroke:#ef4444,color:#000;
-
-  class CF_DNS,CF_PROXY,CF_TUNNEL_EDGE edge;
-  class CLOUDFLARED,SITES,TS host;
-  class KAMAL,BACKEND,NGINX,GRAFANA,LOKI,PROM container;
-  class MINIO,USER,ADMIN external;
 ```
 
 ## 핵심 컴포넌트

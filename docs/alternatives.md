@@ -93,12 +93,9 @@
 flowchart TD
   Q1{공인 IP 있음?} -->|Yes| OPT_DIRECT[A record + 포트 포워딩]
   Q1 -->|No, 가정용 회선| Q2{커스텀 도메인 + 다중 호스트?}
-  Q2 -->|Yes| CF[Cloudflare Tunnel ★]
+  Q2 -->|Yes| CF[★ Cloudflare Tunnel ★]
   Q2 -->|No, 1~2개 데모| TS[Tailscale Funnel]
   Q2 -->|일시적 데모| NGROK[ngrok]
-
-  classDef chosen fill:#fed7aa,stroke:#ea580c,color:#000;
-  class CF chosen;
 ```
 
 11개 호스트 + 4개 도메인 + 무료 무제한 + 자체 발급 SSL + IP 노출 X — 이 조합을 가장 깔끔하게 충족하는 게 Cloudflare Tunnel이라서 선택.
