@@ -1,0 +1,68 @@
+site_name: Stork Spear — Home Server Infra
+site_description: Mac mini 홈 서버 인프라 문서 — DNS, 요청 처리 플로우, 기술 스택
+site_url: https://storkspear.github.io/storkspear-homeserver-infra-docs-viewer/
+repo_url: https://github.com/storkspear/storkspear-homeserver-infra-docs-viewer
+repo_name: storkspear-homeserver-infra-docs-viewer
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드
+  font:
+    text: Pretendard
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search:
+      lang: ko
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - 홈: index.md
+  - 서빙 중인 DNS: dns-list.md
+  - 인프라 아키텍처: architecture.md
+  - 요청 처리 플로우: request-flow.md
+  - 기술 스택: tech-stack.md
+  - 대안 비교: alternatives.md
