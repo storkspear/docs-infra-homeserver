@@ -66,3 +66,6 @@ nav:
   - 요청 처리 플로우: request-flow.md
   - 기술 스택: tech-stack.md
   - 대안 비교: alternatives.md
+  - 운영:
+    - 런북: runbook.md
+    - Smoke Test: smoke-test.md

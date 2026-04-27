@@ -11,6 +11,8 @@ Stork Spear 홈 서버(Mac mini) 인프라 문서.
 - 요청 처리 플로우 — API / 정적 / www 리다이렉트 / 배포 시퀀스 다이어그램
 - 기술 스택 — 각 컴포넌트의 역할과 선택 이유
 - 대안 비교 — DuckDNS / Tailscale Funnel / ngrok 등과의 차이
+- 런북 — SSH 접속, 컨테이너 recreate 명령, 도메인 추가 절차, 알려진 함정
+- Smoke Test — 운영 변경 후 정상 동작 검증용 URL 체크리스트
 
 ## 로컬에서 보기
 
