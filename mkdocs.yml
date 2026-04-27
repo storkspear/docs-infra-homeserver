@@ -1,8 +1,8 @@
 site_name: Stork Spear — Home Server Infra
 site_description: Mac mini 홈 서버 인프라 문서 — DNS, 요청 처리 플로우, 기술 스택
-site_url: https://storkspear.github.io/storkspear-homeserver-infra-docs-viewer/
-repo_url: https://github.com/storkspear/storkspear-homeserver-infra-docs-viewer
-repo_name: storkspear-homeserver-infra-docs-viewer
+site_url: https://storkspear.github.io/docs-infra-homeserver/
+repo_url: https://github.com/storkspear/docs-infra-homeserver
+repo_name: docs-infra-homeserver
 edit_uri: edit/main/docs/
 
 theme:

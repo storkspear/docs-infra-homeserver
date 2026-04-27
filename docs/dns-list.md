@@ -10,7 +10,7 @@ Mac mini가 cloudflared 터널을 통해 직접/간접적으로 응답하는 호
 
 | 호스트 | 라우팅 대상 | 용도 |
 |---|---|---|
-| `server.storkspear.cloud` | `kamal-proxy` (:80/:443) → `backend-server-web` (:8080) | API 백엔드 |
+| `server.storkspear.cloud` | `kamal-proxy` (:80/:443) → `server-factory-web` (:8080) | API 백엔드 |
 | `log.storkspear.cloud` | Grafana (:3000) | 로그/메트릭 대시보드 |
 | `storage.storkspear.cloud` | MinIO (다른 Tailscale 노드) | S3 호환 객체 스토리지 |
 
@@ -53,7 +53,7 @@ Mac mini가 cloudflared 터널을 통해 직접/간접적으로 응답하는 호
 flowchart LR
   CF[cloudflared 터널] -->|server / log / storage| KAMAL[kamal-proxy<br/>:80/:443]
   CF -->|나머지 8개<br/>정적/홈페이지| NGINX[homepage-nginx<br/>:8088]
-  KAMAL --> BE[backend-server-web<br/>:8080]
+  KAMAL --> BE[server-factory-web<br/>:8080]
   KAMAL --> GRAFANA[Grafana :3000]
   NGINX --> SITES[~/sites/<br/>정적 파일]
 ```

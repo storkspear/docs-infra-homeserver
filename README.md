@@ -1,8 +1,8 @@
-# storkspear-homeserver-infra-docs-viewer
+# docs-infra-homeserver
 
 Stork Spear 홈 서버(Mac mini) 인프라 문서.
 
-🌐 **Live:** https://storkspear.github.io/storkspear-homeserver-infra-docs-viewer/
+🌐 **Live:** https://storkspear.github.io/docs-infra-homeserver/
 
 ## 다루는 내용
 

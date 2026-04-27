@@ -11,14 +11,14 @@ sequenceDiagram
   participant CF as Cloudflare 엣지
   participant CT as cloudflared (Mac mini)
   participant KP as kamal-proxy
-  participant API as backend-server-web
+  participant API as server-factory-web
 
   U->>CF: GET https://server.storkspear.cloud/api/...
   Note over CF: TLS 종단, WAF, 라우팅
   CF->>CT: 터널로 forward (Host 헤더 보존)
   CT->>CT: ingress 매칭<br/>→ http://localhost:80
   CT->>KP: HTTP forward
-  KP->>KP: server_name 매칭<br/>→ backend-server-web
+  KP->>KP: server_name 매칭<br/>→ server-factory-web
   KP->>API: localhost:8080
   API-->>KP: JSON 응답
   KP-->>CT: 응답 전달
@@ -120,7 +120,7 @@ sequenceDiagram
 
   Dev->>GH: git push (백엔드 레포)
   GH->>GH: Docker 이미지 빌드
-  GH->>GHCR: ghcr.io/storkspear/backend-server:<sha> push
+  GH->>GHCR: ghcr.io/storkspear/server-factory:<sha> push
   Dev->>MM: kamal deploy (또는 자동화)
   MM->>GHCR: 새 이미지 pull
   MM->>MM: 새 컨테이너 spin up

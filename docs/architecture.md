@@ -28,7 +28,7 @@ flowchart TB
 
       subgraph kamal_lane["동적 앱 차선"]
         KAMAL[kamal-proxy<br/>:80 / :443]
-        BACKEND[backend-server-web<br/>:8080]
+        BACKEND[server-factory-web<br/>:8080]
         KAMAL --> BACKEND
       end
 
@@ -81,7 +81,7 @@ flowchart TB
 - **cloudflared:** 단일 프로세스. CF로 항상 outbound 연결 유지. `~/.cloudflared/storkspear.yml`의 ingress 규칙대로 호스트별로 내부 컨테이너에 분기. launchd가 자동 재시작 관리.
 - **Docker:**
     - `kamal-proxy` — Basecamp의 Kamal과 함께 쓰는 무중단 배포용 리버스 프록시. 새 컨테이너 띄워서 트래픽 swap.
-    - `backend-server-web` — 실제 API 앱. `ghcr.io/storkspear/backend-server` 이미지.
+    - `server-factory-web` — 실제 API 앱. `ghcr.io/storkspear/server-factory` 이미지.
     - `homepage-nginx` — 단순 정적 서빙 + www → apex 리다이렉트. nginx:alpine.
     - `grafana / loki / prometheus` — 관측성 스택.
 - **`~/sites/`:** 정적 파일 마운트. `hello/`(placeholder 4개) + `portfolio/`(git clone). nginx가 read-only로 마운트.

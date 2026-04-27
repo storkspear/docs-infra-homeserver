@@ -38,7 +38,7 @@
 | 컨테이너 | 이미지 | 역할 |
 |---|---|---|
 | `kamal-proxy` | `basecamp/kamal-proxy:v0.9.2` | 무중단 배포용 리버스 프록시 |
-| `backend-server-web-...` | `ghcr.io/storkspear/backend-server:<sha>` | API 백엔드 |
+| `server-factory-web-...` | `ghcr.io/storkspear/server-factory:<sha>` | API 백엔드 |
 | `homepage-nginx` | `nginx:alpine` | 정적 사이트 + www 리다이렉트 |
 | `observability-grafana` | `grafana/grafana:11.3.0` | 메트릭/로그 대시보드 |
 | `observability-loki` | `grafana/loki:3.2.0` | 로그 저장소 |
@@ -79,7 +79,7 @@
 **현재 활용:**
 
 - `storkspear/design-portfolio` — 포트폴리오 사이트 소스. Mac mini가 git pull로 가져감.
-- `storkspear/storkspear-homeserver-infra-docs-viewer` (이 문서) — Actions로 mkdocs 빌드 → Pages 배포.
+- `storkspear/docs-infra-homeserver` (이 문서) — Actions로 mkdocs 빌드 → Pages 배포.
 
 **Actions 사용량 절약 전략:**
 
@@ -111,7 +111,7 @@ flowchart LR
   CF[Cloudflare] --> CFD[cloudflared]
   CFD --> KAMAL[kamal-proxy]
   CFD --> NGINX[nginx]
-  KAMAL --> BE[backend-server]
+  KAMAL --> BE[server-factory]
   NGINX --> SITES[정적 파일]
   TS[Tailscale] -.관리.-> MAC[Mac mini]
   GH[GitHub] -->|소스/이미지| MAC
